@@ -20,7 +20,7 @@ interface Point {
 }
 
 const defaultOpts = {
-    focusClass: 'focus-connector'
+    focusClass: 'webish-connector'
 }
 
 let idx = 0;
