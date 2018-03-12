@@ -1,4 +1,4 @@
-export interface SpotfocusOptions {
+export interface WebishOptions {
     focusClass: string;
 }
 
@@ -25,7 +25,7 @@ const defaultOpts = {
 
 let idx = 0;
 
-export class Spotfocus {
+export class Webish {
     private options;
     private connectorPoints: Point[] = [];
     private svgRect: ClientRect;
@@ -98,3 +98,4 @@ export class Spotfocus {
             .join(' ');
     }
 }
+export default Webish;
