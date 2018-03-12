@@ -1,9 +1,10 @@
-![](https://github.com/ashubham/markee/raw/master/assets/webish.gif)
+![](https://github.com/ashubham/webish/raw/master/assets/webish.gif)
 
 # Webish
-Visual SVG web of connected draggable components.
 [![Build Status](https://travis-ci.org/ashubham/webish.svg?branch=master)](https://travis-ci.org/ashubham/webish)
 [![npm version](https://badge.fury.io/js/webish.svg)](https://badge.fury.io/js/webish)
+
+Visual SVG web of connected draggable components.
 
 - [Demo](https://codepen.io/ashubham/pen/dmoQyv)
 
