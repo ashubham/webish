@@ -1,0 +1,35 @@
+{
+  "name": "webish",
+  "version": "1.0.0",
+  "description": " Visual web to connect draggable components",
+  "main": "dist/webish.js",
+  "typings": "build/index.d.ts",
+  "scripts": {
+    "build": "tsc -p .",
+    "dist": "npm run build && webpack --config=webpack.config.js",
+    "test": "npm run build",
+    "prepublish": "npm run dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashubham/webish.git"
+  },
+  "keywords": [
+    "spot",
+    "lights",
+    "focus",
+    "svg",
+    "polygon"
+  ],
+  "author": "ashubham@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ashubham/webish/issues"
+  },
+  "homepage": "https://github.com/ashubham/webish#readme",
+  "devDependencies": {
+    "typescript": "^2.7.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11"
+  }
+}

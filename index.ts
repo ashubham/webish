@@ -28,7 +28,8 @@ let idx = 0;
 export class Spotfocus {
     private options;
     private connectorPoints: Point[] = [];
-    private containerRect: ClientRect;
+    private svgRect: ClientRect;
+    private svgEl: Element;
     private connectorEl: Element;
     private polygonUniqueClass: string = `polygon-${idx++}`;
     constructor(
@@ -37,20 +38,21 @@ export class Spotfocus {
         options = {}) {
         this.options = Object.assign(defaultOpts, options);
 
-        let svgTemplate = `<svg style="position: absolute;width: 100%;height: 100%;z-index: -1;">
-            <polygon points="0,0" class="${this.polygonUniqueClass} ${this.options.focusClass}">
+        let svgTemplate = `<svg class="${this.polygonUniqueClass}" style="position: absolute;width: 100%;height: 100%;z-index: -1;">
+            <polygon points="0,0" class="${this.options.focusClass}">
         </svg>`;
         this.container.insertAdjacentHTML('afterbegin', svgTemplate);
-        this.connectorEl = this.container.getElementsByClassName(this.polygonUniqueClass)[0];
+        this.svgEl = this.container.getElementsByClassName(this.polygonUniqueClass)[0];
+        this.connectorEl = this.svgEl.getElementsByTagName('polygon')[0];
         this.redraw();
     }
 
     public redraw() {
-        this.containerRect = this.container.getBoundingClientRect();
+        this.svgRect = this.svgEl.getBoundingClientRect();
         this.connectorPoints = this.targets.reduce((connectorPoints, target) => {
             let node = target.node;
             let rect = node.getBoundingClientRect();
-            let relativeRect = this.getRelativeRect(rect, this.containerRect);
+            let relativeRect = this.getRelativeRect(rect, this.svgRect);
             let points = this.getPathPointsForTarget(relativeRect, target.direction);
             connectorPoints.push(...points);
             return connectorPoints;
