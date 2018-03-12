@@ -37,6 +37,12 @@ let web = new Webish(container /* containerEl */, [
     {node: document.getElementById('e2'), direction: 'right'},
     {node: document.getElementById('e3'), direction: 'top'}
 ]);
+
+// To redraw the web, maybe on dragEnd
+container.addEventListener('dragend', (e) => {
+    // ...
+    webish.redraw();
+})
 ```
 ```css
 .webish-connector {
