@@ -1,6 +1,6 @@
 {
   "name": "webish",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": " Visual web to connect draggable components",
   "main": "dist/webish.js",
   "typings": "build/index.d.ts",
